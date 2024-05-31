@@ -4,7 +4,7 @@
         <h4 class="py-3 mb-4"><span class="text-muted fw-light">Artikel /</span> Daftar</h4>
         <div class="card">
             <h5 class="card-header">Artikel
-                <a href="{{ route('artikel.create') }}" class="btn btn-sm btn-info" style="float: right">Tambah</a>
+                <a href="{{ route('artikel.create') }}" class="btn btn-info" style="float: right">Tambah</a>
             </h5>
             <div class="table-responsive text-nowrap">
                 <table class="table">

@@ -13,11 +13,11 @@
                                             enctype="multipart/form-data">
                                             @csrf
                                             <div class="mb-3">
-                                                <label class="form-label">Mata Pelajaran?</label>
+                                                <label class="form-label">Mata Pelajaran</label>
                                                 <input type="text" class="form-control" name="mapel"
                                                     placeholder="Mata Pelajaran">
                                             </div>
-                                            <button type="submit" class="btn btn-primary">Tambahkan</button>
+                                            <button type="submit" class="btn btn-primary">Tambah</button>
                                             <a href="{{ route('mapel.index') }}" class="btn btn-danger">Kembali</a>
                                         </form>
                                     </div>

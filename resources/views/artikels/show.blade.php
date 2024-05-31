@@ -6,7 +6,7 @@
                     <h4 class="py-3 mb-4"><span class="text-muted fw-light">Artikel /</span> Detail</h4>
                     <div class="container">
                         <div class="row justify-content-center">
-                            <div class="col-md-8">
+                            <div class="col">
                                 <div class="card">
                                     <div class="card-body">
                                         <form action="{{ route('artikel.store') }}" method="POST">
@@ -34,6 +34,5 @@
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     @endsection

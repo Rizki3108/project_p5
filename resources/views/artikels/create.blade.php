@@ -17,10 +17,8 @@
                                                 <input type="text" class="form-control" name="judul">
                                             </div>
                                             <div class="mb-3">
-                                                <div class="form-floating">
-                                                    <label for="floatingTextarea">Isi</label>
-                                                    <textarea class="form-control" name="isi" id="floatingTextarea"></textarea>
-                                                </div>
+                                                <label for="floatingTextarea">Isi</label>
+                                                <textarea class="form-control" name="isi" id="floatingTextarea"></textarea>
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Sampul</label>
@@ -28,7 +26,7 @@
                                             </div>
 
                                             <div class="mb-3">
-                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                <button type="submit" class="btn btn-primary">Tambah</button>
                                                 <a href="{{ url('admin/artikel') }}" class="btn btn-danger">Kembali</a>
                                             </div>
                                         </form>

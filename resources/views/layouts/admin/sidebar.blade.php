@@ -59,56 +59,49 @@
         <!-- Dashboards -->
         <li class="menu-item active open">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Dashboards">Dashboards</div>
-                <div class="badge bg-danger rounded-pill ms-auto">5</div>
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Dashboards">Layouts</div>
             </a>
+
             <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="{{ route('jabatan.index')}}"
-                         class="menu-link">
+                <li class="menu-item active">
+                    <a href="{{ route('jabatan.index') }}" class="menu-link">
                         <div data-i18n="Mapel">Jabatan</div>
                         {{-- <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div> --}}
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{ route('mapel.index')}}"
-                         class="menu-link">
+                    <a href="{{ route('mapel.index') }}" class="menu-link">
                         <div data-i18n="Mapel">Mata Pelajaran</div>
                         {{-- <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div> --}}
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{ route('guru.index')}}"
-                         class="menu-link">
+                    <a href="{{ route('guru.index') }}" class="menu-link">
                         <div data-i18n="Mapel">Guru</div>
                         {{-- <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div> --}}
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{ route('struktural.index')}}"
-                         class="menu-link">
+                    <a href="{{ route('struktural.index') }}" class="menu-link">
                         <div data-i18n="Mapel">Struktural</div>
                         {{-- <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div> --}}
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{ route('artikel.index')}}"
-                         class="menu-link">
+                    <a href="{{ route('artikel.index') }}" class="menu-link">
                         <div data-i18n="Mapel">Artikel</div>
                         {{-- <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div> --}}
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{ route('jurusan.index')}}"
-                         class="menu-link">
+                    <a href="{{ route('jurusan.index') }}" class="menu-link">
                         <div data-i18n="Mapel">Jurusan</div>
                         {{-- <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div> --}}
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="{{ route('eskul.index')}}"
-                         class="menu-link">
+                    <a href="{{ route('eskul.index') }}" class="menu-link">
                         <div data-i18n="Mapel">Ekstrakulikuler</div>
                         {{-- <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div> --}}
                     </a>
@@ -142,11 +135,9 @@
             </ul>
         </li>
 
-        <!-- Layouts -->
         <!-- Components -->
-        <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
-        <!-- Cards -->
+        {{-- <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li> --}}
         <!-- Forms & Tables -->
-        <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li>
+        {{-- <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li> --}}
     </ul>
 </aside>

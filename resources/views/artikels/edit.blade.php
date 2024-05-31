@@ -20,10 +20,8 @@
                                                 value="{{ $artikel->judul }}">
                                         </div>
                                         <div class="mb-3">
-                                            <div class="form">
-                                                <label for="floatingTextarea">Isi</label>
-                                                <textarea class="form-control" name="isi" id="floatingTextarea">{{ $artikel->isi }}</textarea>
-                                            </div>
+                                            <label for="floatingTextarea">Isi</label>
+                                            <textarea class="form-control" name="isi" id="floatingTextarea">{{ $artikel->isi }}</textarea>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Sampul</label><br>
@@ -31,7 +29,7 @@
                                             <input type="file" class="form-control" name="sampul">
                                         </div>
                                         <div class="mb-3">
-                                            <button type="submit" class="btn btn-primary">Ubah</button>
+                                            <button type="submit" class="btn btn-primary">Simpan</button>
                                             <a href="{{ url('admin/artikel') }}" class="btn btn-danger">Kembali</a>
                                         </div>
                                     </form>
