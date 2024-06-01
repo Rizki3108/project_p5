@@ -16,21 +16,13 @@
                                                 <div class="col">
                                                     <div id="text1">
                                                         <div>
-                                                            <h1 class="kami">Visi & Misi</h1>
+                                                            <h1 class="kami">Jurusan-jurusan di SMK Assalaam Bandung</h1>
                                                         </div>
-                                                        <p class="p">Visi : Menjadikan SMK Assalaam sebagai sekolah
-                                                            IDAMAN</p>
-                                                        <p class="p">Misi</p>
+                                                        <p class="p">SMK Assalaam memiliki 3 Jurusan yaitu :</p>
                                                         <p class="p">
-                                                            <li class="p">Intelek dalam melaksanakan proses
-                                                                pembelajaran</li>
-                                                            <li class="p">Disiplin dalam segala aspek kehidupan</li>
-                                                            <li class="p">Amanah dalam melaksanakan tugas</li>
-                                                            <li class="p">Maju dan menang untuk kepentingan bersama
-                                                            </li>
-                                                            <li class="p">Aktif dalam merespon perkembangan</li>
-                                                            <li class="p">Norma islam sebagai landasan dalam
-                                                                beraktifitas</li>
+                                                            <li class="p">Teknik Kendaraan Ringan Otomotif (TKRO)</li>
+                                                            <li class="p">Rekayasa Perangkat Lunak (RPL)</li>
+                                                            <li class="p">Teknik Bisnis Sepeda Motor (TBSM)</li>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -63,7 +55,7 @@
             <div class="row">
                 @foreach ($jurusan as $data)
                     <div class="col-4 mt-5">
-                        <div class="card bg-secondary text-light" style="width: 14rem;">
+                        <div class="card" style="width: 14rem;">
                             <img src="{{ asset('images/jurusan/' . $data->sampul) }}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $data->nama_jurusan }}</h5>

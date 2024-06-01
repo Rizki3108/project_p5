@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="py-3 mb-4"><span class="text-muted fw-light">Jurusan /</span> Daftar</h4>
+                        <h4 class="py-3 mb-4"><span class="text-muted fw-light">Selamat Datang /</span> Beranda</h4>
                         <div class="app-academy">
                             <div class="card p-0 mb-4">
                                 <div class="card-body d-flex flex-column flex-md-row justify-content-between p-0 pt-4">
@@ -16,7 +16,7 @@
                                                 <div class="col">
                                                     <div id="text1">
                                                         <div>
-                                                            <h1 class="kami">Tentang Kami</h1>
+                                                            <h1 class="text-center">Tentang Kami</h1>
                                                         </div>
                                                         <div>
                                                             <p class="p">SMK Assalaam merupakan sekolah kejuruan dengan
@@ -65,7 +65,7 @@
         <div class="container-xxl flex-grow-1 container-p-y">
             {{-- ROW 1 --}}
             <div class="col mt-5 justify-content-center">
-                <h1>Berita & Artikel Tentang SMK Assalaam Bandung</h1>
+                <h1 class="text-center">Berita Seputar SMK Assalaam Bandung</h1>
             </div>
             {{-- /ROW 1 --}}
 
@@ -91,19 +91,84 @@
         </div>
     </div>
 
-    <div id="bg2">
-        <div class="container-xxl flex-grow-1 container-p-y">
+    <div id="page-wrapper">
+        <div class="container-fluid">
             <div class="row">
-                <div id="text2">
-                    <p class="think">
-                    <h4>Sekolah berkualitas dengan program pembelajaran yang berkualitas,
-                        sumber daya pengajar yang berkualitas, dan sarana prasarana yang
-                        lengkap dan mutakhir
-                    </h4>
-                    </p>
+                <div class="col-lg-12">
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <div class="app-academy">
+                            <div class="card p-0 mb-4">
+                                <div class="card-body d-flex flex-column flex-md-row justify-content-between p-0 pt-4">
+                                    <div class="container">
+                                        <div id="back">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div id="text1">
+                                                        <div>
+                                                            <h1 class="text-center">Moto Kami</h1>
+                                                        </div>
+                                                        <h4 class="text-center">
+                                                            Sekolah berkualitas dengan program pembelajaran yang
+                                                            berkualitas,
+                                                            sumber daya pengajar yang berkualitas, dan sarana prasarana yang
+                                                            lengkap dan mutakhir
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg1">
-                    <img src="{{ asset('admin/img/literasi.png.png') }}" class="text-center" id="crew" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <div class="app-academy">
+                            <div class="card p-0 mb-4">
+                                <div class="card-body d-flex flex-column flex-md-row justify-content-between p-0 pt-4">
+                                    <div class="container">
+                                        <div id="back">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div id="text1">
+                                                        <div>
+                                                            <h1 class="text-center">Visi & Misi</h1>
+                                                        </div>
+                                                        <p class="text-center">Visi :</p>
+                                                        <p class="text-center">Menjadikan SMK Assalaam sebagai sekolah IDAMAN</p>
+                                                        <p class="text-center">Misi :</p>
+                                                        <p class="text-center">
+                                                            <li class="text-center">Intelek dalam melaksanakan proses
+                                                                pembelajaran</li>
+                                                            <li class="text-center">Disiplin dalam segala aspek
+                                                                kehidupan</li>
+                                                            <li class="text-center">Amanah dalam melaksanakan tugas</li>
+                                                            <li class="text-center">Maju dan menang untuk kepentingan
+                                                                bersama
+                                                            </li>
+                                                            <li class="text-center">Aktif dalam merespon perkembangan
+                                                            </li>
+                                                            <li class="text-center">Norma islam sebagai landasan dalam
+                                                                beraktifitas</li>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
