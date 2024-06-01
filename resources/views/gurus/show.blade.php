@@ -31,6 +31,10 @@
                                                 <input type="text" class="form-control" name="id_mapel"
                                                     value="{{ $guru->id_mapel }}" disabled>
                                             </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Sampul</label><br>
+                                                <img src="{{ asset('/images/guru/' . $guru->sampul) }}" width="100">
+                                            </div>
                                         </div>
                                         <a href="{{ route('guru.index') }}" class="btn btn-danger">Kembali</a>
                                     </div>

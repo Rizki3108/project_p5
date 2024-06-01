@@ -1,23 +1,11 @@
-<footer class="bg-secondary text-white p-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 mt-5">
-                <h3 class="footer-heading mb-4">SMK Assalaam Bandung</h3>
-                <ul class="list-unstyled">
-                    <li>Jl. Situ Tarate Jl. Cibaduyut, </li>
-                    <li>Cangkuang Kulon, Kec. Dayeuhkolot,</li>
-                    <li>Kabupaten Bandung, Jawa Barat</li>
-                    <li>40265</li>
-                </ul>
-            </div>
-            <div class="col-md-3 mt-5">
-                <img src="{{ asset('admin/img/logo-custom__1_-removebg-preview.png') }}" width="35%" alt="">
-                <br>
-                <br>
-                <ul class="list-unstyled">
-                    <li>Copyright © 2024 Muhammad AliRizki</li>
-                </ul>
-            </div>
+<footer class="content-footer footer bg-footer-theme">
+    <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+        <div class="mb-2 mb-md-0">
+            ©
+            <script>
+                document.write(new Date().getFullYear());
+            </script>
+            Made With Laravel 9
         </div>
     </div>
 </footer>

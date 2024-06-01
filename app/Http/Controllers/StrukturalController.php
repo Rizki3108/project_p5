@@ -47,6 +47,15 @@ class StrukturalController extends Controller
         $struktural = new Struktural;
         $struktural->id_guru = $request->id_guru;
         $struktural->id_jabatan = $request->id_jabatan;
+
+        if ($request->hasFile('sampul')) {
+            $img = $request->file('sampul');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move('images/struktural', $name);
+            $struktural->sampul = $name;
+
+        }
+
         $struktural->save();
         return redirect()->route('struktural.index')->with('success', 'Berhasil menambahkan data');
     }
@@ -89,6 +98,16 @@ class StrukturalController extends Controller
         $struktural = Struktural::findOrFail($id);
         $struktural->id_guru = $request->id_guru;
         $struktural->id_jabatan = $request->id_jabatan;
+
+        if ($request->hasFile('sampul')) {
+            $struktural->deleteImage();
+            $img = $request->file('sampul');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move('images/struktural', $name);
+            $struktural->sampul = $name;
+
+        }
+        
         $struktural->save();
         return redirect()->route('struktural.index')->with('success', 'Berhasil mengubah data');
     }

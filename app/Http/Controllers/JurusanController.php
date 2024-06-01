@@ -38,7 +38,16 @@ class JurusanController extends Controller
     {
         $jurusan = new Jurusan;
         $jurusan->kaprog = $request->kaprog;
-        $jurusan->nama_jurusan = $request->jurusan;
+        $jurusan->nama_jurusan = $request->nama_jurusan;
+
+        if ($request->hasFile('sampul')) {
+            $img = $request->file('sampul');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move('images/jurusan', $name);
+            $jurusan->sampul = $name;
+
+        }
+
         $jurusan->save();
         return redirect()->route('jurusan.index')->with('success', 'Berhasil menambahkan data');
     }
@@ -79,6 +88,16 @@ class JurusanController extends Controller
         $jurusan = Jurusan::findOrFail($id);
         $jurusan->kaprog = $request->kaprog;
         $jurusan->nama_jurusan = $request->nama_jurusan;
+
+        if ($request->hasFile('sampul')) {
+            $jurusan->deleteImage();
+            $img = $request->file('sampul');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move('images/jurusan', $name);
+            $jurusan->sampul = $name;
+
+        }
+        
         $jurusan->save();
         return redirect()->route('jurusan.index')->with('success', 'Berhasil Mengedit Data');
     }

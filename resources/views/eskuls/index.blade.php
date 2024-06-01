@@ -13,6 +13,7 @@
                             <th scope="col">No.</th>
                             <th scope="col">Nama Eskul</th>
                             <th scope="col">Deskripsi</th>
+                            <th scope="col">Sampul</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
@@ -25,6 +26,9 @@
                                 <th scope="row">{{ $no++ }}</th>
                                 <td>{{ $data->nama_eskul }}</td>
                                 <td>{{ $data->isi }}</td>
+                                <td>
+                                    <img src="{{ asset('/images/eskul/' . $data->sampul) }}" width="100">
+                                </td>
                                 <form action="{{ route('eskul.destroy', $data->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')

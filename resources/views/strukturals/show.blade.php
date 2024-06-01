@@ -21,6 +21,11 @@
                                                 <input type="text" class="form-control" name="id_jabatan"
                                                     value="{{ $struktural->id_jabatan }}" disabled>
                                             </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Sampul</label><br>
+                                                <img src="{{ asset('/images/struktural/' . $struktural->sampul) }}"
+                                                    width="100">
+                                            </div>
                                             <a href="{{ route('struktural.index') }}" class="btn btn-danger">Kembali</a>
                                         </form>
                                     </div>

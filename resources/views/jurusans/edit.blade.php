@@ -24,6 +24,11 @@
                                             <input type="text" class="form-control" name="nama_jurusan"
                                                 value="{{ $jurusan->nama_jurusan }}">
                                         </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Sampul</label><br>
+                                            <img src="{{ asset('/images/jurusan/' . $jurusan->sampul) }}" width="100">
+                                            <input type="file" class="form-control" name="sampul">
+                                        </div>
                                         <button type="submit" class="btn btn-primary">Simpan</button>
                                         <a href="{{ route('jurusan.index') }}" class="btn btn-danger">Kembali</a>
                                     </form>

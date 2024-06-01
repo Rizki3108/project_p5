@@ -23,6 +23,11 @@
                                                 <input type="text" class="form-control" name="isi"
                                                     value="{{ $eskul->isi }}">
                                             </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Sampul</label><br>
+                                                <img src="{{ asset('/images/eskul/' . $eskul->sampul) }}" width="100">
+                                                <input type="file" class="form-control" name="sampul">
+                                            </div>
                                             <button type="submit" class="btn btn-primary">Simpan</button>
                                             <a href="{{ url('admin/eskul') }}" class="btn btn-danger">Kembali</a>
                                         </form>

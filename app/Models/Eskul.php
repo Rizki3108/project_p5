@@ -9,6 +9,12 @@ class Eskul extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id', 'nama_eskul', 'isi'];
+    protected $fillable = ['id', 'nama_eskul', 'isi', 'sampul'];
     public $timestamps = true;
+
+    public function deleteImage(){
+        if($this->cover && file_exists(public_path('images/eskul' . $this->sampul))){
+            return unlink(public_path('images/eskul' . $this->sampul));
+        }
+    }
 }

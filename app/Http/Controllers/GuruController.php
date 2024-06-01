@@ -48,6 +48,14 @@ class GuruController extends Controller
         $guru->telepon = $request->telepon;
         $guru->email = $request->email;
         $guru->id_mapel = $request->id_mapel;
+
+        if ($request->hasFile('sampul')) {
+            $img = $request->file('sampul');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move('images/guru', $name);
+            $guru->sampul = $name;
+
+        }   
         $guru->save();
         return redirect()->route('guru.index')->with('success', 'Berhasil menambahkan data');
     }
@@ -91,6 +99,15 @@ class GuruController extends Controller
         $guru->telepon = $request->telepon;
         $guru->email = $request->email;
         $guru->id_mapel = $request->id_mapel;
+
+        if ($request->hasFile('sampul')) {
+            $guru->deleteImage();
+            $img = $request->file('sampul');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move('images/guru', $name);
+            $guru->sampul = $name;
+
+        }
         $guru->save();
         return redirect()->route('guru.index')->with('success', 'Berhasil Mengubah Data');
     }

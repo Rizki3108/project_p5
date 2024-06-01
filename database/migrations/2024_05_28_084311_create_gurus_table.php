@@ -19,6 +19,7 @@ return new class extends Migration
             $table->bigInteger('telepon');
             $table->string('email');
             $table->unsignedBigInteger('id_mapel');
+            $table->string('sampul');
             $table->timestamps();
 
             $table->foreign('id_mapel')->references('id')->on('mapels')->onDelete('cascade');

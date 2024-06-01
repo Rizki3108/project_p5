@@ -9,7 +9,7 @@ class Struktural extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id', 'id_guru', 'id_jabatan'];
+    protected $fillable = ['id', 'id_guru', 'id_jabatan', 'sampul'];
     public $timestamps = true;
 
     public function guru()
@@ -20,5 +20,11 @@ class Struktural extends Model
     public function jabatan()
     {
         return $this->belongsTo(Jabatan::class, 'id_jabatan');
+    }
+
+    public function deleteImage(){
+        if($this->cover && file_exists(public_path('images/struktural' . $this->sampul))){
+            return unlink(public_path('images/struktural' . $this->sampul));
+        }
     }
 }

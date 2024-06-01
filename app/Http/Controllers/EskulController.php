@@ -42,7 +42,15 @@ class EskulController extends Controller
     {
         $eskul = new Eskul;
         $eskul->nama_eskul = $request->nama_eskul;
-        $eskul->isi = $request->isi;                                                       
+        $eskul->isi = $request->isi;
+        
+        if ($request->hasFile('sampul')) {
+            $img = $request->file('sampul');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move('images/eskul', $name);
+            $eskul->sampul = $name;
+        }
+
         $eskul->save();
         return redirect()->route('eskul.index')->with('success', 'Data berhasil ditambah');
     }
@@ -83,7 +91,17 @@ class EskulController extends Controller
     {
         $eskul = Eskul::findOrFail($id);
         $eskul->nama_eskul = $request->nama_eskul;
-        $eskul->isi = $request->isi;                                                       
+        $eskul->isi = $request->isi; 
+        
+        if ($request->hasFile('sampul')) {
+            $eskul->deleteImage();
+            $img = $request->file('sampul');
+            $name = rand(1000, 9999) . $img->getClientOriginalName();
+            $img->move('images/eskul', $name);
+            $eskul->sampul = $name;
+
+        }
+        
         $eskul->save();
         return redirect()->route('eskul.index')->with('success', 'Data berhasil diubah');
     }

@@ -40,6 +40,11 @@
                                                     @endforeach
                                                 </select>
                                             </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Sampul</label><br>
+                                                <img src="{{ asset('/images/guru/' . $guru->sampul) }}" width="100">
+                                                <input type="file" class="form-control" name="sampul">
+                                            </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary">Simpan</button>
                                         <a href="{{ url('admin/guru') }}" class="btn btn-danger">Kembali</a>

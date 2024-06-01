@@ -34,6 +34,12 @@
                                                 @endforeach
                                             </select>
                                         </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Sampul</label><br>
+                                            <img src="{{ asset('/images/struktural/' . $struktural->sampul) }}"
+                                                width="100">
+                                            <input type="file" class="form-control" name="sampul">
+                                        </div>
                                         <button type="submit" class="btn btn-primary">Simpan</button>
                                         <a href="{{ url('admin/struktural') }}" class="btn btn-danger">Kembali</a>
                                     </form>

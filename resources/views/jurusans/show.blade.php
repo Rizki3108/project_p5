@@ -20,7 +20,12 @@
                                                 <label class="form-label">Nama Jurusan</label>
                                                 <input type="text" class="form-control" name="jurusan"
                                                     value="{{ $jurusan->nama_jurusan }}" disabled>
-                                            </div><br>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Sampul</label><br>
+                                                <img src="{{ asset('/images/jurusan/' . $jurusan->sampul) }}"
+                                                    width="100">
+                                            </div>
                                             <a href="{{ route('jurusan.index') }}" class="btn btn-danger">Kembali</a>
                                         </div>
                                         <!-- /.panel-body -->

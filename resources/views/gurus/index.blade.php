@@ -14,7 +14,8 @@
                             <th scope="col">Nama Guru</th>
                             <th scope="col">No Telepon</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Nama Mapel</th>
+                            <th scope="col">Guru Mapel</th>
+                            <th scope="col">Sampul</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
@@ -29,6 +30,9 @@
                                 <td>{{ $data->telepon }}</td>
                                 <td>{{ $data->email }}</td>
                                 <td>{{ $data->mapel->mapel }}</td>
+                                <td>
+                                    <img src="{{ asset('/images/guru/' . $data->sampul) }}" width="100">
+                                </td>
                                 <form action="{{ route('guru.destroy', $data->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
