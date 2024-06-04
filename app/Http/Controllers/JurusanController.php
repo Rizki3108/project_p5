@@ -36,6 +36,12 @@ class JurusanController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'kaprog' => 'required',
+            'nama_eskul' => 'required|unique:jurusans',
+            'sampul' => 'required|max:2048|mimes:png,jpg',
+        ]);
+        
         $jurusan = new Jurusan;
         $jurusan->kaprog = $request->kaprog;
         $jurusan->nama_jurusan = $request->nama_jurusan;
@@ -85,6 +91,12 @@ class JurusanController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validated = $request->validate([
+            'kaprog' => 'required',
+            'nama_jurusan' => 'required',
+            // 'sampul' => 'required|max:2048|mimes:png,jpg',
+        ]);
+
         $jurusan = Jurusan::findOrFail($id);
         $jurusan->kaprog = $request->kaprog;
         $jurusan->nama_jurusan = $request->nama_jurusan;

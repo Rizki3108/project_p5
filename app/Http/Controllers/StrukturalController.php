@@ -6,6 +6,7 @@ use App\Models\Guru;
 use App\Models\Jabatan;
 use App\Models\Struktural;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class StrukturalController extends Controller
 {
@@ -44,6 +45,25 @@ class StrukturalController extends Controller
      */
     public function store(Request $request)
     {
+        //validasi data
+        $validated = Validator::make($request->all(), [
+            'id_guru' => 'required|unique:strukturals,id_guru', //nama guru harus unik
+            'id_jabatan' => 'required|exists:jabatans,id', //id jabatan harus ada di tabel jabatan
+        ]);
+
+        if ($validated->fails()) {
+            return response()->json(['errors' => $validated->errors()], 442);
+        }
+
+        //periksa apakah sudah ada guru dengan nama yang sama dan jabatan yang sama
+        $existingStruktural = Struktural::where('id_guru', $request->nama_guru)
+            ->where('id_jabatan', $request->id_jabatan)
+            ->first();
+
+        if ($existingStruktural) {
+            return response()->json(['error' => 'Guru dengan nama dan jabatan yang sama sudah ada'], 442);
+        }
+        
         $struktural = new Struktural;
         $struktural->id_guru = $request->id_guru;
         $struktural->id_jabatan = $request->id_jabatan;
@@ -95,6 +115,27 @@ class StrukturalController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //validasi data
+        $validated = Validator::make($request->all(), [
+            'id_guru' => 'required',
+            'id_jabatan' => 'required|exists:jabatans,id',
+        ]);
+
+        if ($validated->fails()) {
+            return response()->json(['errors' => $validated->errors()], 422);
+        }
+
+        //periksa apakah sudah ada nama guru dengan nama yang sama dan jabatan yang sama
+        //kecuali guru yang sedang di update
+        $existingStruktural = Struktural::where('id_guru', $request->nama_guru)
+            ->where('id_jabatan', $request->id_jabatan)
+            ->where('id', '!=', $id) //kecuali guru yang sedang di update
+            ->first();
+
+        if ($existingStruktural) {
+            return response()->json(['error' => 'Guru dengan nama dan jabatan yang sama sudah ada'], 442);
+        }
+
         $struktural = Struktural::findOrFail($id);
         $struktural->id_guru = $request->id_guru;
         $struktural->id_jabatan = $request->id_jabatan;

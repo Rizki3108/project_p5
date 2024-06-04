@@ -40,6 +40,10 @@ class MapelController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'mapel' => 'required|unique:mapels',
+        ]);
+
         $mapel = new Mapel;
         $mapel->mapel = $request->mapel;
         $mapel->save();
@@ -79,6 +83,10 @@ class MapelController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validated = $request->validate([
+            'mapel' => 'required|unique:mapels',
+        ]);
+
         $mapel = Mapel::findOrFail($id);
         $mapel->mapel = $request->mapel;
         $mapel->save();

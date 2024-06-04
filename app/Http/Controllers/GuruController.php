@@ -43,6 +43,13 @@ class GuruController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'nama_guru' => 'required|unique:gurus',
+            'telepon' => 'required',
+            'email' => 'required|string',
+            'id_mapel' => 'required',
+        ]);
+        
         $guru = new Guru;
         $guru->nama_guru = $request->nama_guru;
         $guru->telepon = $request->telepon;
@@ -94,6 +101,13 @@ class GuruController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validated = $request->validate([
+            'nama_guru' => 'required',
+            'telepon' => 'required',
+            'email' => 'required|string',
+            'id_mapel' => 'required',
+        ]);
+        
         $guru = Guru::findOrFail($id);
         $guru->nama_guru = $request->nama_guru;
         $guru->telepon = $request->telepon;

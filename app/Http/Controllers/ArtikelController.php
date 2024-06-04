@@ -16,6 +16,7 @@ class ArtikelController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function index()
     {
         $artikel = Artikel::all();
@@ -40,6 +41,12 @@ class ArtikelController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'judul' => 'required|unique:artikels',
+            'isi' => 'required',
+            'sampul' => 'required|max:2048|mimes:png,jpg',
+        ]);
+
         $artikel = new Artikel;
         $artikel->judul = $request->judul;
         $artikel->isi = $request->isi;
@@ -89,6 +96,12 @@ class ArtikelController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validated = $request->validate([
+            'judul' => 'required',
+            'isi' => 'required',
+            // 'sampul' => 'required|max:2048|mimes:png,jpg',
+        ]);
+
         $artikel = Artikel::findOrFail($id);
         $artikel->judul = $request->judul;
         $artikel->isi = $request->isi;

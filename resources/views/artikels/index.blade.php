@@ -12,7 +12,6 @@
                         <tr>
                             <th scope="col">No.</th>
                             <th scope="col">Judul</th>
-                            <th scope="col">Isi</th>
                             <th scope="col">Sampul</th>
                             <th scope="col">Action</th>
                         </tr>
@@ -25,7 +24,6 @@
                             <tr>
                                 <th scope="row">{{ $no++ }}</th>
                                 <td>{{ $data->judul }}</td>
-                                <td>{{ $data->isi }}</td>
                                 <td>
                                     <img src="{{ asset('/images/artikel/' . $data->sampul) }}" width="100">
                                 </td>

@@ -79,6 +79,7 @@
                                     alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $data->judul }}</h5>
+                                    <h5 class="card-title">{{ $data->isi }}</h5>
                                     <a href="{{ route('beranda.show', $data->id) }}" class="btn btn-primary">Lihat
                                         Selengkapnya</a>
                                 </div>

@@ -40,6 +40,12 @@ class EskulController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'nama_eskul' => 'required|unique:eskuls',
+            'isi' => 'required',
+            'sampul' => 'required|max:2048|mimes:png,jpg',
+        ]);
+
         $eskul = new Eskul;
         $eskul->nama_eskul = $request->nama_eskul;
         $eskul->isi = $request->isi;
@@ -89,6 +95,12 @@ class EskulController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validated = $request->validate([
+            'nama_eskul' => 'required',
+            'isi' => 'required',
+            // 'sampul' => 'required|max:2048|mimes:png,jpg',
+        ]);
+
         $eskul = Eskul::findOrFail($id);
         $eskul->nama_eskul = $request->nama_eskul;
         $eskul->isi = $request->isi; 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jabatan;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 
 class JabatanController extends Controller
@@ -41,6 +42,10 @@ class JabatanController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'jabatan' => 'required|unique:jabatans'
+        ]);
+
         $jabatan = new Jabatan;
         $jabatan->jabatan = $request->jabatan;
         $jabatan->save();
@@ -80,6 +85,10 @@ class JabatanController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validated = $request->validate([
+            'jabatan' => 'required'
+        ]);
+
         $jabatan = Jabatan::findOrFail($id);
         $jabatan->jabatan = $request->jabatan;
         $jabatan->save();
