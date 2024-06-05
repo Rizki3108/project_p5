@@ -19,7 +19,7 @@
                             {{-- <p class="card-text">Jumlah : {{ $data->jumlah }}</p>
                                 <p class="card-text">Tanggal Produk : {{ $data->tanggal_produksi }}</p>
                                 <p class="card-text">Merek : {{ $data -> merek -> nama_merek }}</p> --}}
-                            <a href="{{ route('beranda') }}" class="btn btn-primary">Kembali</a>
+                            <a href="{{ route('welcome') }}" class="btn btn-primary">Kembali</a>
                         </div>
                     </div>
                 </div>

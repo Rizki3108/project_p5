@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artikel;
+use App\Models\Guru;
+use App\Models\Jurusan;
 
 class BerandaController extends Controller
 {
     public function index()
     {
         $artikel = Artikel::all();
-
-        return view('welcome', compact('artikel'));
+        $guru = Guru::all();
+        $jurusan = Jurusan::all();
+        return view('welcome', compact('artikel', 'guru', 'jurusan'));
 
     }   
 
